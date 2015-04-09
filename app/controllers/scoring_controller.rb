@@ -1,4 +1,4 @@
-class ScoringController < ApplicationCotroller
+class ScoringController < ApplicationController
   def index
     @scoring = Scoring.all
   end
