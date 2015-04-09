@@ -1,0 +1,45 @@
+
+
+<dl class="dl-horizontal">
+  <dt>First name</dt>
+  <dd><%= @patient.first_name %></dd>
+  <dt>Last name</dt>
+  <dd><%= @patient.last_name %></dd>
+  <dt>Email</dt>
+  <dd><%= mail_to @patient.email %></dd>
+  <dt>Survey Results</dt>
+  <dd><%= @patient.survey_results %></dd>
+</dl>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Subscale</th>
+      <th>Possible Range</th>
+      <th>Items</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Internal</td>
+        <td>Chance</td>
+        <td>Doctors</td>
+        <td>Other People</td>
+      </tr>
+      <tr>
+        <td>6-36</td>
+        <td>6-36</td>
+        <td>3-18</td>
+        <td>3-18</td>
+      </tr>
+      <tr>
+        <td>1, 6, 8, 12, 13, 17</td>
+        <td>2, 4, 9, 11, 15, 16</td>
+        <td>3, 5, 14</td>
+        <td> 7, 10, 18</td>
+      </tr>
+
+    <% @survey.columns.each do |q| %>
+    <% end %>
+  </tbody>
+</table>

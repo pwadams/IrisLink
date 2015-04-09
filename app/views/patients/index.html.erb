@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h2>List of Patients<h2>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Survey Results</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= link_to patient.full_name, patient_path(patient) %></td>
+        <td><%= patient.survey_results %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
