@@ -7,15 +7,14 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Survey Results</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @patients.each do |patient| %>
+    <% @doctor.patients.each do |patient| %>
       <tr>
-        <td><%= link_to patient.full_name, patient_path(patient) %></td>
-        <td><%= patient.survey_results %></td>
+        <td><%= link_to "#{patient.full_name}", doctor_patient_path(@doctor, patient) %></td>
+        <td><%= link_to "delete", doctor_patient_path(@doctor, patient), method: :delete, data: {confirm: "Are you sure?"} %> </td>
       </tr>
     <% end %>
   </tbody>

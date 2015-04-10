@@ -8,7 +8,9 @@
   <dt>Email</dt>
   <dd><%= mail_to @patient.email %></dd>
   <dt>Survey Results</dt>
+
   <dd><%= @patient.survey_results %></dd>
+  <dd
 </dl>
 
 <table class="table">
@@ -22,24 +24,29 @@
   <tbody>
       <tr>
         <td>Internal</td>
-        <td>Chance</td>
-        <td>Doctors</td>
-        <td>Other People</td>
-      </tr>
-      <tr>
         <td>6-36</td>
-        <td>6-36</td>
-        <td>3-18</td>
-        <td>3-18</td>
-      </tr>
-      <tr>
         <td>1, 6, 8, 12, 13, 17</td>
+      </tr>
+      <tr>
+        <td>Chance</td>
+        <td>6-36</td>
         <td>2, 4, 9, 11, 15, 16</td>
+      </tr>
+      <tr>
+        <td>Doctors</td>
+        <td>3-18</td>
         <td>3, 5, 14</td>
+      </tr>
+      <tr>
+        <td>Other People</td>
+        <td>3-18</td>
         <td> 7, 10, 18</td>
       </tr>
 
     <% @survey.columns.each do |q| %>
+
     <% end %>
   </tbody>
 </table>
+The score on each subscale is the sum of the values selected for each item on the subscale (i.e., where 1 = "strongly disagree" and 6 = "strongly agree").
+No items need to be reversed before summing.  All of the subscales are independent of one another.  There is no such thing as a "total" MHLC score.

@@ -11,7 +11,11 @@ Rails.application.routes.draw do
    get 'about', to: 'about#index'
    get 'scoring', to: 'scoring#index'
 
+
+  resources :doctors, only: [] do
+      resources :patients, only: [:index, :show, :create, :destroy]
+  end
+
    resources :surveys, only: [:index, :new, :create, :show]
-   resources :patients, only: [:index, :show, :create]
 
 end

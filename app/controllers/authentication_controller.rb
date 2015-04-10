@@ -13,7 +13,7 @@ class AuthenticationController < ApplicationController
     elsif doctor && doctor.authenticate(params[:password])
       session[:doctor_id] = doctor.id
       flash[:notice] = "Doctor #{doctor.full_name}, You have successfully signed in."
-      redirect_to patients_path
+      redirect_to doctor_patients_path(doctor, patient)
     else
       flash[:danger] = "Email/Password combination is invalid."
       render :new

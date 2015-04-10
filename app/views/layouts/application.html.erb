@@ -9,26 +9,29 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <%= link_to "IrisLink", root_path, class: "logo" %>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <%= link_to "IrisLink", root_path, class: "logo" %>
 
 
-     <% if current_user %>
-     <ul class = "nav navbar-nav navbar-right">
-        <li class="welcome"> Welcome <%= current_user.full_name %> </li>
-     </ul>
-     <% elsif current_user_is_admin %>
-     <ul class = "nav navbar-nav navbar-right">
-     <li class="welcome"> Welcome <%= current_user_is_admin.full_name %> </li>
-        <li><%= link_to "Sign Out", sign_out_path %> </li>
-     </ul>
-     <% else %>
-     <ul class = "nav navbar-nav navbar-right">
-        <li> <%= link_to "Sign Up", sign_up_path %> </li>
-        <li> <%= link_to "Sign In", sign_in_path %> </li>
+   <% if current_user %>
+   <ul class = "nav navbar-nav navbar-right">
+      <li class="welcome"> Welcome <%= current_user.full_name %> </li>
+      <li><%= link_to "Sign Out", sign_out_path %> </li>
+   </ul>
+
+   <% elsif current_user_is_admin %>
+   <ul class = "nav navbar-nav navbar-right">
+      <li class="welcome"> Welcome <%= current_user_is_admin.full_name %> </li>
+      <li><%= link_to "Sign Out", sign_out_path %> </li>
+   </ul>
+
+   <% else %>
+   <ul class = "nav navbar-nav navbar-right">
+      <li> <%= link_to "Sign Up", sign_up_path %> </li>
+      <li> <%= link_to "Sign In", sign_in_path %> </li>
     </ul>
-     <% end %>
-</nav>
+   <% end %>
+ </nav>
 
 <div class= "container">
   <% if flash[:notice].present? %>

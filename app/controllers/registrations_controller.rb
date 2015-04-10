@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(params.require(:patient).permit(:first_name, :last_name, :email, :password, :password_confirmation))
+    @patient = Patient.new(params.require(:patient).permit(:first_name, :last_name, :email, :password, :password_confirmation,  :doctor_id))
     if @patient.save
       session[:patient_id] = @patient.id
     flash[:notice] = "#{@patient.full_name}, Thank you for registering for the survey."

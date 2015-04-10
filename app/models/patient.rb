@@ -1,7 +1,7 @@
 class Patient <ActiveRecord::Base
   has_secure_password
   belongs_to :doctor
-  has_one :survey
+  has_one :survey, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -13,5 +13,6 @@ class Patient <ActiveRecord::Base
   end
 
   def survey_results
+    
   end
 end
