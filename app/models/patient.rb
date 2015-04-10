@@ -11,8 +11,4 @@ class Patient <ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
-
-  def survey_results
-    
-  end
 end

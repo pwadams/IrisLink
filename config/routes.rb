@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   resources :doctors, only: [] do
       resources :patients, only: [:index, :show, :create, :destroy]
   end
-
    resources :surveys, only: [:index, :new, :create, :show]
 
 end
