@@ -2,6 +2,7 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    @doctor = Doctor.first
   end
 
   def create

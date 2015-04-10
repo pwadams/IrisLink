@@ -1,5 +1,9 @@
 <div class="row">
-  Welcome <%=current_user.full_name %>,
+  <% if current_user %>
+  Welcome <%=current_user.full_name %>
+  <% elsif current_user_is_admin %>
+  <% end %>
+
   <div class="page-header">
     <h1>Instructions</h1>
     <p>Instructions:
