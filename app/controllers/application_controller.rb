@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     Doctor.find(session[:doctor_id]) if session[:doctor_id].present?
   end
 
+  
+
+
+
 end

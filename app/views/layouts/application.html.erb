@@ -45,12 +45,13 @@
 <%= yield %>
 
 </div>
-
 <footer>
 <div class= "container">
   <hr>
+<% if current_user_is_admin %>
     <%=link_to "Home", root_path%> | <%=link_to "About", about_path%> | <%=link_to "Scoring", scoring_path%> |
     <%=link_to "Back", :back %>
+<% end %>
 </div>
 </footer>
 </body>

@@ -12,7 +12,9 @@
       understand how you think about and make decisons regarding your health.
       </p>
       <hr>
+      <% if current_user_is_admin %>
       <%=link_to "Start the Survey", new_survey_path, class: "btn btn-primary" %>
+      <% end %>
       <%=image_tag("survey_matters.png", class: "img-responsive") %>
       <hr>
   </div>
