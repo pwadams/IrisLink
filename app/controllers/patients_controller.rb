@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
   def create
     @patient = @doctor.patients.new(patient_params)
     if @doctor.patient.save
-      flash[:notice] = "User was successfully created"
+       flash[:notice] = "User was successfully created"
       redirect_to root_path
     else
       render :new

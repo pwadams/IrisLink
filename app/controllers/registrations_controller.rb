@@ -12,6 +12,7 @@ class RegistrationsController < ApplicationController
     @patient = Patient.new(params.require(:patient).permit(:first_name, :last_name, :email, :password, :password_confirmation,  :doctor_id))
     if @patient.save
       session[:patient_id] = @patient.id
+
     flash[:notice] = "#{@patient.full_name}, Thank you for registering for the survey."
     redirect_to new_survey_path
     else
