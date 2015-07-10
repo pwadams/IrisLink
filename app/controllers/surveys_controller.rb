@@ -11,7 +11,7 @@ class SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     @survey.patient_id = current_user.id
     if @survey.save
-      DoctorMailer.welcome_email(@doctor).deliver_now
+      # DoctorMailer.welcome_email(@doctor).deliver_now
       flash[:notice] = "You're survey has been submitted"
       redirect_to survey_path(@survey)
     else

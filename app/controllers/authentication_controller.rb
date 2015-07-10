@@ -9,7 +9,7 @@ class AuthenticationController < ApplicationController
     if patient && patient.authenticate(params[:password])
       session[:patient_id] = patient.id
       flash[:notice] = "#{patient.full_name}, You have successfully signed in."
-      redirect_to root_path
+      redirect_to new_survey_path
     elsif doctor && doctor.authenticate(params[:password])
       session[:doctor_id] = doctor.id
       flash[:notice] = "Doctor #{doctor.full_name}, You have successfully signed in."
